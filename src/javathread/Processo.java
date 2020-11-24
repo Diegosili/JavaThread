@@ -15,7 +15,7 @@ public class Processo  extends Thread {
     
     public Processo(String a) {
         this.a = a;
-//        this.start();
+        this.start();
     }
     
     public void run() {

@@ -17,8 +17,8 @@ public class JavaThread {
     public static void main(String[] args) {
         Processo T1 = new Processo("T1");
         Processo T2 = new Processo("T2");
-        T1.start();
-        T2.start();
+//        T1.start();
+//        T2.start();
     }
     
 }
