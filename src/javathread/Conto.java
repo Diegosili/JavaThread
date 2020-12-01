@@ -9,17 +9,20 @@ package javathread;
  *
  * @author siliprandi.diego
  */
-public class Processo extends Thread {
+public class Conto {
     
-    private String a;
+    private int tot;
+    private int tasse = 100;
     
-    public Processo(String a) {
-        this.a = a;
+    public Conto(int tot) {
+        this.tot = tot;
     }
     
-    public void run() {
-        int i = 0;
-        for(;;i++) System.out.println(a+" "+i);
+    synchronized void versa(int somma) {
+        tot = tot + somma - tasse;
     }
     
+    synchronized int saldo() {
+        return tot;
+    }
 }

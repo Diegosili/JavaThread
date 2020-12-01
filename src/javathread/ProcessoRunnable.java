@@ -9,17 +9,22 @@ package javathread;
  *
  * @author siliprandi.diego
  */
-public class Processo extends Thread {
+public class ProcessoRunnable implements Runnable {
     
-    private String a;
+    private String s;
+    private boolean stop;
     
-    public Processo(String a) {
-        this.a = a;
+    public ProcessoRunnable(String s) {
+        stop = false;
+        this.s = s;
     }
     
     public void run() {
-        int i = 0;
-        for(;;i++) System.out.println(a+" "+i);
+        while(!stop) System.out.println(s);
+        
     }
     
+    public void stoppa() {
+        stop = true;
+    }
 }

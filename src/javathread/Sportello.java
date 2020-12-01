@@ -9,17 +9,20 @@ package javathread;
  *
  * @author siliprandi.diego
  */
-public class Processo extends Thread {
+public class Sportello implements Runnable{
     
-    private String a;
+    Conto conto;
     
-    public Processo(String a) {
-        this.a = a;
+    public Sportello(Conto conto) {
+        this.conto = conto;
     }
     
     public void run() {
-        int i = 0;
-        for(;;i++) System.out.println(a+" "+i);
+        
     }
     
+    public void versa(int somma) {
+        conto.versa(somma);
+        System.out.println("conto: "+conto.saldo());
+    }
 }
