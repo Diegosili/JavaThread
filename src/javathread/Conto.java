@@ -18,11 +18,15 @@ public class Conto {
         this.tot = tot;
     }
     
-    synchronized void versa(int somma) {
+    public synchronized void versa(int somma) {
         tot = tot + somma - tasse;
     }
     
-    synchronized int saldo() {
+    public synchronized int getSaldo() {
         return tot;
+    }
+    
+    public synchronized void preleva(int somma) {
+        tot = tot - somma;
     }
 }
